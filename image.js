@@ -36,7 +36,7 @@ async function textToCode(text) {
 
 async function epic_jimp(pixel_colours) {
   return new Promise((resolve, reject) => {
-    let width = pixel_colours.length > 720 ? 720 : pixel_colours.length;
+    let width = pixel_colours.length // > 720 ? 720 : pixel_colours.length;
     //console.log(pixel_colours.length/width)
     new Jimp(width, Math.ceil(pixel_colours.length / width), function (err, image) {
       if (err) throw err;
