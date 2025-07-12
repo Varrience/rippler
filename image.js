@@ -15,7 +15,7 @@ async function textToCode(text) {
     let pixel = '0x';
     for (let i = 0; i < text.length; i++) {
       let parsed = text.charCodeAt(i);
-      if (parsed > 255) {
+      if (parsed >= 255) {
         text = text.substring(0, i) + "\\u" + uparse(text[i]) + text.substring(i + 1, text.length);
         parsed = 92;
       }
