@@ -15,7 +15,7 @@ async function textToCode(text) {
     let pixel = '0x';
     for (let i = 0; i < text.length; i++) {
       let parsed = text.charCodeAt(i);
-      if (parsed >= 255) {
+      if (parsed > 255) {
         text = text.substring(0, i) + "\\u" + uparse(text[i]) + text.substring(i + 1, text.length);
         parsed = 92;
       }
@@ -36,7 +36,7 @@ async function textToCode(text) {
 
 async function epic_jimp(pixel_colours) {
   return new Promise((resolve, reject) => {
-    let width = pixel_colours.length // > 720 ? 720 : pixel_colours.length;
+    let width = pixel_colours.length > 720 ? 720 : pixel_colours.length;
     //console.log(pixel_colours.length/width)
     new Jimp(width, Math.ceil(pixel_colours.length / width), function (err, image) {
       if (err) throw err;
