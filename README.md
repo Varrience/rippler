@@ -11,7 +11,8 @@
 ### Inline code request
 ```js
 // Gamelab
- loadImage(yourBackend + "request?data=" + encodeURI(request))
+ loadImage(yourBackend + "request?data=" + encodeURI(request), function(iamge: object) {
+ })
 // Applab
  drawImageURL(yourBackend + "request?data=" + encodeURI(request), function(load: boolean) {
  })
