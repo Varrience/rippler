@@ -18,14 +18,14 @@
 ```
 ### Example Format for request encoding
 ```json
-    {
-      Method: "GET",
-      Url: "https://photop.exotek.co/posts",
-      Body: {
-        param1: "param1Data"
-      },
-      Headers: {
-        Authorization: "bearertoken1"
-      }
-    }
+{
+  "Method": "GET",
+  "Url": "https://photop.exotek.co/posts",
+  "Body": {
+    "param1": "param1Data"
+  },
+  "Headers": {
+    "Authorization": "bearertoken1"
+  }
+}
 ```
