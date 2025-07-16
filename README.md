@@ -30,3 +30,6 @@
   }
 }
 ```
+## FAQ
+- Q: I keep getting garbage out responses to my requests
+- A: If your using a privacy focused browser this may cause issues! Many secure browsers randomize pixel values to prevent image fingerprinting via canvas or image displays if you trust the site your running this on or are using your own make sure to relax privacy features otherwise data will never be transcoded correctly
