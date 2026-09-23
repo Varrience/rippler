@@ -4,7 +4,7 @@
 - ### @ABICAM STUDIOS
 ## Version: 0.42
 ## DATEBY: 09/14/2023
-## UPDATED: 07/13/2025 
+## UPDATED: 09/23/2026 
 ## SUPPORTS: APPLAB & GAMELAB
 ## Example:
  - Send a request by using an object by using loadImage or loading pixels from a specific canvas if you don't have one
@@ -30,8 +30,8 @@
   }
   "responseType": "image/png"
 }
-**Note:** that *responseType* is optional, this is **only** if you want a different format that what rippler originally provides to **you**
 ```
+**Note:** that *responseType* is optional, this is **only** if you want a different format that what rippler originally provides to **you**
 ## FAQ
 - Q: I keep getting garbage out responses to my requests
 - A: If your using a privacy focused browser this may cause issues! Many secure browsers randomize pixel values to prevent image fingerprinting via canvas or image displays if you trust the site your running this on or are using your own make sure to relax privacy features otherwise data will never be transcoded correctly
