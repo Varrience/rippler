@@ -4,14 +4,17 @@ ABICAMS HAD A WAY BEFORE THOUGH I GUESS IT CHANGED THIS IS
 MORE OF AN UPGRADE 1 INSTEAD OF 2 REQUESTS
 */
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const axios = require("axios");
 const jimpify = require("./image");
+app.use(cors());
 app.get("/", (req, res) => {
   res.status(200).send("hi");
 });
 app.get("/request", (req, res) => {
-  let data = JSON.parse(req.query["data"].replaceAll('\\"', '"'));
+  const data = JSON.parse(req.query["data"].replaceAll('\\"', '"'));
+  const type = data.responseType ? data.responseType : "image/png";
   let sendData = {
     method: data.Method,
     url: data.Url,
@@ -24,16 +27,13 @@ app.get("/request", (req, res) => {
   }
   axios(sendData)
     .then(async (response) => {
-      res.set("Content-Type", "image/png");
+      res.set("Content-Type", type);
+      let respond = {
+        data: typeof response.data !== "string" ? JSON.stringify(response.data): response.data,
+        status: response.status,
+      };
       res.status(200).send(
-        await jimpify.renderImage({
-          data:
-            typeof response.data !== "string"
-              ? JSON.stringify(response.data)
-              : response.data,
-          status: response.status,
-        }),
-      );
+        type === "image/png" ? await jimpify.renderImage(respond): respond);
     })
     .catch((error) => {
       console.log(error);
