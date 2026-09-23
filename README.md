@@ -28,7 +28,9 @@
   "Headers": {
     "Authorization": "bearertoken1"
   }
+  "responseType": "image/png"
 }
+**Note:** that *responseType* is optional, this is **only** if you want a different format that what rippler originally provides to **you**
 ```
 ## FAQ
 - Q: I keep getting garbage out responses to my requests
